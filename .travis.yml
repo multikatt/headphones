@@ -1,0 +1,10 @@
+language: python
+
+branches:
+    only:
+        - travis
+
+install:
+    - pip install pylint
+
+script: pylint
