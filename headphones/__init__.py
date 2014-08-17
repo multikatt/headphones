@@ -16,6 +16,7 @@
 # NZBGet support added by CurlyMo <curlymoo1@gmail.com> as a part of XBian - XBMC on the Raspberry Pi
 
 import os, sys, subprocess
+sys.path.insert(0, os.path.join(os.path.dirname(".."), 'lib/'))
 
 import threading
 import webbrowser
