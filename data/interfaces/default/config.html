@@ -616,6 +616,16 @@
                         </td>
                         <td>
                             <fieldset>
+                                <legend>Pre-Processing</legend>
+                                <div class="row checkbox left clearfix">
+                                    <input type="checkbox" name="preproc_script" id="preproc_script" value="1" ${config['preproc_script']} /><label>Execute script before running the processor</label>
+                                    <div id="preproc_script_options">
+                                        <div class="row indent">
+                                            <input type="text" class="override-float" name="preproc_script_file" value="${config['preproc_script_file']}" size="10">
+                                         </div>
+                                    </div>
+                                </div>
+
                                 <legend>Post-Processing</legend>
                                 <div class="row checkbox left clearfix">
                                     <input type="checkbox" name="move_files" id="move_files" value="1" ${config['move_files']} /><label>Move downloads to Destination Folder</label>
@@ -1393,6 +1403,26 @@
                         else
                         {
                                 $("#album_art_options").slideUp();
+                        }
+                });
+
+                if ($("#preproc_script").is(":checked"))
+                        {
+                                $("#preproc_script_options").show();
+                        }
+                else
+                        {
+                                $("#preproc_script_options").hide();
+                        }
+
+                $("#preproc_script").click(function(){
+                        if ($("#preproc_script").is(":checked"))
+                        {
+                                $("#preproc_script_options").slideDown();
+                        }
+                        else
+                        {
+                                $("#preproc_script_options").slideUp();
                         }
                 });
 
